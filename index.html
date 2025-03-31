@@ -5,66 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manav Thakkar - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Manav Thakkar</h1>
-        <p>Machine Learning & AI Enthusiast</p>
-        <button id="dark-mode-toggle">🌙</button>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Manav Thakkar</h1>
+            <p>AI & Deep Learning Enthusiast | Software Developer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><button id="dark-mode-toggle">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Passionate Machine Learning enthusiast with expertise in AI, data science, and deep learning. Experienced in classification models, feature engineering, and predictive analytics.</p>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> Python, Java, C, C++</li>
-            <li><strong>Machine Learning:</strong> Feature Engineering, Model Optimization, Deep Learning</li>
-            <li><strong>Tools:</strong> TensorFlow, OpenCV, SQL, Power BI</li>
-        </ul>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Handwritten Text Recognition</h3>
-            <p>Built a deep learning model using CNNs to digitize handwritten text with high accuracy.</p>
-        </div>
-        <div class="project">
-            <h3>Fashion AI</h3>
-            <p>Developed an AI system for clothing classification and color analysis to suggest matching outfits.</p>
-        </div>
-        <div class="project">
-            <h3>AI Traffic Optimization</h3>
-            <p>Designed an AI-powered traffic signal system that detects vehicle density and dynamically adjusts signal timing.</p>
-        </div>
-        <div class="project">
-            <h3>Competitive Programming Solutions</h3>
-            <p>Optimized algorithmic solutions for LeetCode and HackerRank challenges.</p>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm an AI & Deep Learning enthusiast with hands-on experience in machine learning, computer vision, and cloud computing. Passionate about solving real-world problems using innovative technology.</p>
         </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: manav.thakkar@example.com</p>
-        <p>GitHub: <a href="https://github.com/22AIML055ManavThakkar">My GitHub</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/manav-thakkar">My LinkedIn</a></p>
+
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project" onclick="toggleDetails(this)">
+                <h3>AI Outfit Generator</h3>
+                <p class="project-details">A deep-learning-based model that suggests matching outfits using clothing classification and color extraction.</p>
+            </div>
+            <div class="project" onclick="toggleDetails(this)">
+                <h3>AI Traffic Optimization</h3>
+                <p class="project-details">Implemented vehicle classification and dynamic signal timing based on traffic density.</p>
+            </div>
+        </div>
     </section>
-    
-    <footer>
-        <p>&copy; 2025 Manav Thakkar. All Rights Reserved.</p>
-    </footer>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:manav@example.com">manav@example.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/manav-thakkar" target="_blank">linkedin.com/in/manav-thakkar</a></p>
+            <p>GitHub: <a href="https://github.com/22AIML055ManavThakkar" target="_blank">github.com/22AIML055ManavThakkar</a></p>
+        </div>
+    </section>
+
+    <script>
+        function toggleDetails(element) {
+            element.classList.toggle('active');
+        }
+        
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
