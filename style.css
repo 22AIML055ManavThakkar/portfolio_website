@@ -1,29 +1,34 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
-    transition: background 0.3s, color 0.3s;
+/* Modern Portfolio Styling */
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #1C1C1C;
+    --background-color: #F4F7FC;
+    --text-color: #333;
+    --highlight-color: #FFD700;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background: #1a1a1a;
-    color: #fff;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
 }
 
 header {
-    background: #333;
+    background: var(--primary-color);
     color: white;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
 }
 
 nav ul {
@@ -37,23 +42,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 1.2em;
-}
-
-button#dark-mode-toggle {
-    background: transparent;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
     color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
+nav ul li a:hover {
+    color: var(--highlight-color);
 }
 
 section {
@@ -64,46 +60,83 @@ section {
 h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
 .project {
     background: white;
-    padding: 20px;
-    margin: 10px auto;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-details {
     display: none;
+    padding-top: 10px;
     font-size: 1.1em;
-    margin-top: 10px;
 }
 
 .project.active .project-details {
     display: block;
+    animation: fadeIn 0.5s ease;
 }
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-out forwards;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#contact a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: var(--highlight-color);
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+.dark-mode {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.dark-mode header {
+    background: #333;
+}
+
+.dark-mode .project {
+    background: #222;
+    color: white;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode nav ul li a {
+    color: white;
+}
+
+.dark-mode nav ul li a:hover {
+    color: var(--highlight-color);
 }
